@@ -20,4 +20,11 @@ public class Customer {
     private String email;
     @OneToMany
     private Set<Product> products;
+
+    public Customer(String fullName, String phoneNumber, String email, Set<Product> products) {
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.products = products;
+    }
 }
