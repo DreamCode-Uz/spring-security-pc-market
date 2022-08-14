@@ -3,7 +3,7 @@ package uz.pdp.springsecuritypcmarket.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import uz.pdp.springsecuritypcmarket.service.AttachmentService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -30,11 +30,11 @@ public class AttachmentController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<?> save(MultipartFile multipartFile) {
-        return service.saveFile(multipartFile);
+    public ResponseEntity<?> save(MultipartHttpServletRequest request) {
+        return service.saveFile(request);
     }
 
-    @PutMapping("/download/{attachmentId}")
+    @GetMapping("/download/{attachmentId}")
     public ResponseEntity<?> update(@PathVariable("attachmentId") Integer id, HttpServletResponse response) {
         return service.downloadFile(id, response);
     }

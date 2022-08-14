@@ -1,0 +1,24 @@
+###
+POST http://localhost:8080/api/category
+Authorization: Basic moderator moderator
+Content-Type: application/json
+
+{
+  "name": "Computer",
+  "description": "",
+  "active": true,
+  "price": 1200,
+  "amount": 12,
+  "currencyId": 1,
+  "measurementId": 1,
+  "categoryId": null,
+  "photosId": 1
+}
+
+###
+GET http://localhost:8080/api/category
+Authorization: Basic moderator moderator
+
+###
+DELETE http://localhost:8080/api/category/1
+Authorization: Basic moderator moderator

@@ -22,6 +22,4 @@ public class ProductProp {
     @NotNull
     @Column(nullable = false)
     private Double weight;
-
-
 }

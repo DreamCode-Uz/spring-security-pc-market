@@ -1,0 +1,18 @@
+###
+POST http://localhost:8080/api/category
+Authorization: Basic moderator moderator
+Content-Type: application/json
+
+{
+  "name": "Electronic",
+  "active": true,
+  "categoryId": null
+}
+
+###
+GET http://localhost:8080/api/category
+Authorization: Basic moderator moderator
+
+###
+DELETE http://localhost:8080/api/category/1
+Authorization: Basic moderator moderator
