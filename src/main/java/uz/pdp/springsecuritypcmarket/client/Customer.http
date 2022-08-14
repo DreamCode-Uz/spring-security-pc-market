@@ -1,0 +1,19 @@
+###
+POST http://localhost:8080/api/customer
+Authorization: Basic moderator moderator
+Content-Type: application/json
+
+{
+  "fullName": "John Doe",
+  "phoneNumber": "998901234567",
+  "email": "john_doe@mail.com",
+  "productsId": [1]
+}
+
+###
+GET http://localhost:8080/api/customer
+Authorization: Basic moderator moderator
+
+###
+DELETE http://localhost:8080/api/customer/1
+Authorization: Basic moderator moderator

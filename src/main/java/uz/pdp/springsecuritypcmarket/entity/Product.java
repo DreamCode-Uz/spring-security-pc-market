@@ -10,7 +10,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import java.util.Date;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -26,8 +25,6 @@ public class Product extends AbsEntity {
 
     private Double amount;
 
-    private Date createDate;
-
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     private Set<Attachment> attachment;
 
@@ -40,12 +37,11 @@ public class Product extends AbsEntity {
     @ManyToOne(optional = false)
     private Category category;
 
-    public Product(Integer id, String name, boolean active, String description, Double price, Double amount, Date createDate, Set<Attachment> attachment, Currency currency, Measurement measurement) {
+    public Product(Integer id, String name, boolean active, String description, Double price, Double amount, Set<Attachment> attachment, Currency currency, Measurement measurement) {
         super(id, name, active);
         this.description = description;
         this.price = price;
         this.amount = amount;
-        this.createDate = createDate;
         this.attachment = attachment;
         this.currency = currency;
         this.measurement = measurement;
