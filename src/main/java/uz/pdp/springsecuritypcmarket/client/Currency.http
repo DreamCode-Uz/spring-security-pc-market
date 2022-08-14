@@ -1,0 +1,17 @@
+###
+POST http://localhost:8080/api/measurement
+Authorization: Basic moderator moderator
+Content-Type: application/json
+
+{
+  "name": "SUM",
+  "active": true
+}
+
+###
+GET http://localhost:8080/api/measurement
+Authorization: Basic moderator moderator
+
+###
+DELETE http://localhost:8080/api/measurement/1
+Authorization: Basic moderator moderator
