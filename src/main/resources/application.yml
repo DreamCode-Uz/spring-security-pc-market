@@ -14,3 +14,6 @@ spring:
       enabled: true
       max-file-size: 25MB
       max-request-size: 25MB
+attachment:
+  download:
+    url: api/attachment/download
