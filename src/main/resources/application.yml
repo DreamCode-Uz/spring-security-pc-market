@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/lesson3
     username: postgres
     password: root
     hikari:
@@ -19,3 +19,6 @@ spring:
 attachment:
   download:
     url: api/attachment/download/
+server:
+  error:
+    include-message: always

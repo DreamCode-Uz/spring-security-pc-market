@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import uz.pdp.springsecuritypcmarket.exception.BadRequestException;
 import uz.pdp.springsecuritypcmarket.exception.ConflictException;
 import uz.pdp.springsecuritypcmarket.exception.NotFoundException;
 import uz.pdp.springsecuritypcmarket.payload.response.ApiError;
@@ -25,7 +24,7 @@ import static org.springframework.http.HttpStatus.*;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
-    public final ResponseEntity<Object> handleAllException(Exception e, WebRequest request) {
+    public final ResponseEntity<Object> handleAllExceptions(Exception e, WebRequest request) {
         return new ResponseEntity<>(new ApiError(INTERNAL_SERVER_ERROR, "Server error", e.getLocalizedMessage()), INTERNAL_SERVER_ERROR);
     }
 
@@ -34,13 +33,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(new ApiError(NOT_FOUND, "Record Not Found", e.getLocalizedMessage()), NOT_FOUND);
     }
 
-    @ExceptionHandler(value = BadRequestException.class)
-    public final ResponseEntity<Object> handleBadRequestException(NotFoundException e, WebRequest request) {
-        return new ResponseEntity<>(new ApiError(NOT_FOUND, "Record Not Found", e.getLocalizedMessage()), NOT_FOUND);
-    }
-
     @ExceptionHandler(value = ConflictException.class)
-    public final ResponseEntity<Object> handleConflictException(BadRequestException e, WebRequest request) {
+    public final ResponseEntity<Object> handleConflictException(ConflictException e, WebRequest request) {
         return new ResponseEntity<>(new ApiError(CONFLICT, "Data integrity violation", e.getLocalizedMessage()), CONFLICT);
     }
 

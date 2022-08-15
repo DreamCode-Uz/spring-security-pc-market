@@ -4,7 +4,7 @@ Authorization: Basic moderator moderator
 Content-Type: application/json
 
 {
-  "name": "GR",
+  "name": "Kilogram",
   "active": true
 }
 

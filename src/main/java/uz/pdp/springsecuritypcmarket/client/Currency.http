@@ -1,17 +1,17 @@
 ###
-POST http://localhost:8080/api/measurement
+POST http://localhost:8080/api/currency
 Authorization: Basic moderator moderator
 Content-Type: application/json
 
 {
-  "name": "SUM",
+  "name": "USD",
   "active": true
 }
 
 ###
-GET http://localhost:8080/api/measurement
+GET http://localhost:8080/api/currency
 Authorization: Basic moderator moderator
 
 ###
-DELETE http://localhost:8080/api/measurement/1
+DELETE http://localhost:8080/api/currency/1
 Authorization: Basic moderator moderator

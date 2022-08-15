@@ -18,7 +18,7 @@ public class PaymentCustomer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne
+    @ManyToOne
     private Customer customer;
 
     @Column(nullable = false)
@@ -27,6 +27,6 @@ public class PaymentCustomer {
     @Column(nullable = false)
     private Double price;
 
-    @OneToMany
+    @ManyToMany
     private Set<Product> products;
 }

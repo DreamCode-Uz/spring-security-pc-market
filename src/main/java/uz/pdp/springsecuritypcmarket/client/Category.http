@@ -4,9 +4,8 @@ Authorization: Basic moderator moderator
 Content-Type: application/json
 
 {
-  "name": "Electronic",
-  "active": true,
-  "categoryId": null
+  "name": "Printer",
+  "active": true
 }
 
 ###

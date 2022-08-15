@@ -24,8 +24,8 @@ public class PaymentCustomerController {
         return service.getAll(page, size);
     }
 
-    @GetMapping("/{customerId}")
-    public ResponseEntity<?> getOne(@PathVariable("customerId") Integer id) {
+    @GetMapping("/{paymentId}")
+    public ResponseEntity<?> getOne(@PathVariable("paymentId") Integer id) {
         return service.getOne(id);
     }
 
@@ -34,8 +34,8 @@ public class PaymentCustomerController {
         return service.addPaymentCustomer(dto);
     }
 
-//    @PutMapping("/{customerId}")
-//    public ResponseEntity<?> update(@PathVariable("customerId") Integer id, @Valid @RequestBody PayCusDTO dto) {
+//    @PutMapping("/{paymentId}")
+//    public ResponseEntity<?> update(@PathVariable("paymentId") Integer id, @Valid @RequestBody PayCusDTO dto) {
 //        return service.editPaymentCustomer(id, dto);
 //    }
 }

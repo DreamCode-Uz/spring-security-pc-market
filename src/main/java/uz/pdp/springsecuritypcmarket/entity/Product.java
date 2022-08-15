@@ -6,10 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import uz.pdp.springsecuritypcmarket.entity.template.AbsEntity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -25,7 +22,7 @@ public class Product extends AbsEntity {
 
     private Double amount;
 
-    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
+    @ManyToMany
     private Set<Attachment> attachment;
 
     @ManyToOne(optional = false)

@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
   "fullName": "John Doe",
-  "phoneNumber": "998901234567",
+  "phoneNumber": "+998901234560",
   "email": "john_doe@mail.com",
   "productsId": [1]
 }

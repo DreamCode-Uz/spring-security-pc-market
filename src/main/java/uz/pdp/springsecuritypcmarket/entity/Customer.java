@@ -18,7 +18,7 @@ public class Customer {
     private String fullName;
     private String phoneNumber;
     private String email;
-    @OneToMany
+    @ManyToMany
     private Set<Product> products;
 
     public Customer(String fullName, String phoneNumber, String email, Set<Product> products) {
